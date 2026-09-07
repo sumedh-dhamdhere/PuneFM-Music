@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Music Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Top Utility Branding Navigation Bar -->
+    <header class="yt-header">
+        <div class="logo">
+            <div class="yt-music-logo">
+                <div class="inner-circle">
+                    <div class="play-triangle"></div>
+                </div>
+            </div>
+            <span class="white-text">PuneFM</span> <span class="gray-text">Music</span>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search songs, albums, artists">
+        </div>
+    </header>
+
+    <main class="yt-main-content">
+        <!-- Left Side: Cinematic Studio Canvas Screen -->
+        <section class="player-canvas">
+            <div class="art-frame">
+                <img id="track-art" src="https://unsplash.com" alt="Album Cover Art">
+            </div>
+            <div class="track-meta">
+                <h1 id="track-title">Welcome to YouTube Music Clone</h1>
+                <p id="track-artist">Upload local audio files to populate your player queue</p>
+            </div>
+        </section>
+
+        <!-- Right Side: Scrollable Interactive Queue Sidebar Panel -->
+        <aside class="queue-sidebar">
+            <div class="sidebar-tabs">
+                <button class="tab-btn active">Up Next</button>
+                <button class="tab-btn">Lyrics</button>
+                <button class="tab-btn">Related</button>
+            </div>
+
+            <!-- Upload Zone Module -->
+            <div class="yt-upload-zone" id="drop-zone">
+                <label for="file-upload">
+                    📤 Drag tracks here or <span class="highlight">Choose Audio Files</span>
+                </label>
+                <input type="file" id="file-upload" accept="audio/*" multiple>
+            </div>
+
+            <!-- Interactive Playlist Generation Container -->
+            <div class="track-queue-list" id="queue-list">
+                <!-- Programmatic playlist elements populate dynamically here -->
+                <div class="empty-state">No music queued yet.</div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Bottom Audio Control Interaction Deck -->
+    <footer class="yt-playback-deck">
+        <audio id="audio-core"></audio>
+
+        <!-- Timeline Slider Controller Element -->
+        <div class="timeline-container">
+            <span class="time-stamp" id="current-time">0:00</span>
+            <input type="range" id="seek-bar" min="0" max="100" value="0">
+            <span class="time-stamp" id="total-duration">0:00</span>
+        </div>
+
+        <div class="deck-controls">
+            <!-- Left Corner: Micro Metadata Segment -->
+            <div class="mini-meta">
+                <img id="mini-art" src="https://unsplash.com" alt="">
+                <div>
+                    <div id="mini-title" class="truncate">Select Song</div>
+                    <div id="mini-artist" class="truncate">Local Storage</div>
+                </div>
+            </div>
+
+            <!-- Center Deck: Action Execution Triggers -->
+            <div class="main-buttons">
+                <button class="control-icon" id="btn-shuffle" title="Shuffle">🔀</button>
+                <button class="control-icon" id="btn-prev" title="Previous">⏮</button>
+                <button class="control-icon core-play" id="btn-play" title="Play">▶</button>
+                <button class="control-icon" id="btn-next" title="Next">⏭</button>
+                <button class="control-icon" id="btn-repeat" title="Repeat">↻</button>
+            </div>
+
+            <!-- Right Deck: Systems Volume Controller-->
+            <div class="volume-box">
+                <span class="vol-icon">🔊</span>
+                <input type="range" id="volume-bar" min="0" max="1" step="0.05" value="0.8">
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
